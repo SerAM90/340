@@ -318,7 +318,7 @@ app.put('/update-vendor', function(req, res, next) {
         // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
         console.log(error);
         res.sendStatus(400);
-      } else {    window.location.reload()
+      } else { 
 
         // If there was no error, perform a SELECT * on Vendors to get the updated row
         query2 = `SELECT * FROM Vendors WHERE idVendor= '${vendorName}'`;
