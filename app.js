@@ -301,6 +301,41 @@ app.post('/add-vendor-ajax', function(req, res)
         }
     })
 });
+///UPDATE VENDOR //should it have been /put-vendor-ajax for 305?
+app.put('/update-vendor', function(req, res, next) {
+    // Capture the incoming data and parse it back to a JS object
+    let data = req.body;
+    // let idVendor = parseInt(data.idVendor);
+    let vendorAddress = String(data.vendorAddress);
+    let vendorName = parseInt(data.vendorName)
+    console.log(vendorName);
+    console.log(vendorAddress);
+    // Create the query and run it on the database
+    query1 = `UPDATE Vendors SET vendorAddress = '${vendorAddress}' WHERE idVendor = '${vendorName}'`;
+    db.pool.query(query1, function(error, rows, fields) {
+      // Check to see if there was an error
+      if (error) {
+        // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
+        console.log(error);
+        res.sendStatus(400);
+      } else {    window.location.reload()
+
+        // If there was no error, perform a SELECT * on Vendors to get the updated row
+        query2 = `SELECT * FROM Vendors WHERE idVendor= '${vendorName}'`;
+
+        db.pool.query(query2, function(error, rows, fields) {
+          // If there was an error on the second query, send a 400
+          if (error) {
+            // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
+            console.log(error);
+            res.sendStatus(400);
+          } else {
+            res.send(rows);
+          }
+        })
+      }
+    })
+  });
 
 
 /*

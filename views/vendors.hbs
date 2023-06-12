@@ -54,22 +54,25 @@
 <script src="js/add_vendor.js"></script>   {{!--CHANGED FROM MONIKA'S APP--}}
 
 
-UPDATE 
-<h2>Updating A Vendor Form</h2>
-<p>To update a vendor, select their name from the drop-down menu  </p>
+{{!-- UPDATE  --}}
+<h2>Update Vendor</h2>
+<p class="small">To update a specific vendor, select their name from the drop-down menu</p>
 <form id="update-vendor-form-ajax">
 
- 
-
     <label for="input-vendorName">Vendor's Name: </label>
-    <select name="input-vendorName" id="input-vendorName-update">
-        <option>Select the Vendor</option>
-        {{#each vendors}}
+    <select name="input-vendorName" id="mySelect" >
+        <option value="test">Select Vendor</option>
+        {{#each data}}
         <option value="{{this.idVendor}}">{{this.vendorName}}</option>
         {{/each}}
     </select>
-    <input type="submit">
+
+    <label for="input-address">Address: </label>
+    <input type="text" name="input-address" id="input-address-update" placeholder="Enter new address">
+
+
+    <input type="submit"> 
 
 </form>
 
-<script src="./js/update_vendor.js"></script>
+<script src="js/update_vendor.js"></script>
