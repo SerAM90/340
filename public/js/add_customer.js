@@ -1,3 +1,8 @@
+// #Citations for the following:
+// #Date 6/1/2023
+// #Adapted: Adapted the forms to be able to download from Maria DB from MySQL for using in CS340 project- values and data are original to the data created and used by team 69
+// #Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main
+
 // Get the objects we need to modify
 let addCustomerForm = document.getElementById('add-customer-form-ajax');
 

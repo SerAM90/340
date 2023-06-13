@@ -1,3 +1,7 @@
+// #Citations for the following:
+// #Date 6/1/2023
+// #Adapted:Adapted the forms to be able to download from Maria DB from MySQL for using in CS340 project- values and data are original to the data created and used by team 69
+// #Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main
 // Get the objects we need to modify
 let addCustomerForm = document.getElementById('add-vendor-form-ajax');
 
@@ -16,7 +20,9 @@ addCustomerForm.addEventListener("submit", function (e) {
     // Get the values from the form fields
     let vendorNameValue = inputVendorName.value;
     let vendorAddressValue = inputVendorAddress.value;
-
+    if (vendorAddressValue === ''){
+        vendorAddressValue = null
+    }
     // Put our data we want to send in a javascript object
     let data = {
         vendorName: vendorNameValue,
@@ -51,7 +57,7 @@ addCustomerForm.addEventListener("submit", function (e) {
 
 
 // Creates a single row from an Object representing a single record from 
-// customers_table
+// vendors_table
 addRowToTable = (data) => {
 
     // Get a reference to the current table on the page and clear it out.

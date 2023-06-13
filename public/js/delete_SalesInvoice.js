@@ -2,15 +2,15 @@
 // #Date 6/1/2023
 // #Adapted:Adapted the forms to be able to download from Maria DB from MySQL for using in CS340 project- values and data are original to the data created and used by team 69
 // #Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main
-function deleteEmployee(idEmployee) {
+function deleteSale(idSalesInvoice) {
     // Put our data we want to send in a javascript object
     let data = {
-        idEmployee: idEmployee
+        idSalesInvoice: idSalesInvoice
     };
   
     // Setup our AJAX request
     var xhttp = new XMLHttpRequest();
-    xhttp.open("DELETE", "/delete-employee-ajax", true);
+    xhttp.open("DELETE", "/delete-sale-ajax", true);
     xhttp.setRequestHeader("Content-type", "application/json");
   
     // Tell our AJAX request how to resolve
@@ -18,8 +18,7 @@ function deleteEmployee(idEmployee) {
         if (xhttp.readyState == 4 && xhttp.status == 204) {
   
             // Add the new data to the table
-            deleteRow(idEmployee);
-            console.log("We deleted and got readystate 4 and status 204")
+            deleteRow(idSalesInvoice);
   
         }
         else if (xhttp.readyState == 4 && xhttp.status != 204) {
@@ -31,18 +30,15 @@ function deleteEmployee(idEmployee) {
   }
   
   
-  function deleteRow(idEmployee){
+  function deleteRow(idSalesInvoice){
   
-    let table = document.getElementById("employees-table");
-    console.log("checking employee ID", idEmployee)
+    let table = document.getElementById("salesInvoices-table");
     for (let i = 0, row; row = table.rows[i]; i++) {
        //iterate through rows
        //rows would be accessed using the "row" variable assigned in the for loop
-       console.log(table.rows[i].getAttribute('data-value'))
-       if (table.rows[i].getAttribute("data-value") == idEmployee) {
+       if (table.rows[i].getAttribute("data-value") == idSalesInvoice) {
             table.deleteRow(i);
             break;
        }
     }
-    window.location.reload()
   }

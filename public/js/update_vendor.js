@@ -1,3 +1,7 @@
+// #Citations for the following:
+// #Date 6/1/2023
+// #Adapted:Adapted the forms to be able to download from Maria DB from MySQL for using in CS340 project- values and data are original to the data created and used by team 69
+// #Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main
 let updateVendorForm = document.getElementById('update-vendor-form-ajax');
 
 // Modify the objects we need
@@ -13,6 +17,9 @@ updateVendorForm.addEventListener("submit", function (e) {
     // Get the values from the form fields
     let vendorNameValue = inputVendorName.value;
     let vendorAddressValue = inputVendorAddress.value;
+    if (vendorAddressValue === ''){
+        vendorAddressValue = null
+    }
     
   
 
@@ -59,10 +66,10 @@ function updateRow(data, idVendor){
             // Get the location of the row where we found the matching person ID
             let updateRowIndex = table.getElementsByTagName("tr")[i];
 
-            // Get td of homeworld value
+            // Get td of vendor value
             let td = updateRowIndex.getElementsByTagName("td")[3];
 
-            // Reassign homeworld to our value we updated to
+            // Reassign vendorAddress to our value we updated to
             td.innerHTML = parsedData[0].vendorAddress; 
        }
     }
