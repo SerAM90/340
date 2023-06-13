@@ -3,10 +3,10 @@ Date 6/1/2023
 Adapted:Adapted the forms to be able to download from Maria DB from MySQL for using in CS340 project- values and data are original to the data created and used by team 69
 Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main --}}
 <!-- index.hbs -->
-<h2>Customer Table</h2>
+<h2>Employees Table</h2>
 
-{{!-- Create customer table --}}
-<table id="customers-table">
+{{!-- Create a table --}}
+<table id="employees-table">
 
     {{!-- Header section --}}
     <thead>
@@ -19,6 +19,7 @@ Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/node
                 {{@key}}
             </th>
             {{/each}}
+            <th>delete</th>
         </tr>
     </thead>
 
@@ -28,34 +29,39 @@ Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/node
         {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
         {{#each data}}
         <tr>
-            <td>{{this.idCustomer}}</td>
+            <td>{{this.idEmployee}}</td>
             <td>{{this.firstName}}</td>
             <td>{{this.lastName}}</td>
-            <td>{{this.address}}</td>
-           
+            <td>{{this.email}}</td>
+            <td>{{this.phoneNumber}}</td>
+            <td><button onclick="deleteEmployee({{this.idEmployee}})">Delete</button></td>
         </tr>
         {{/each}}
     </tbody>
 </table>
+<script src="js/delete_employee.js"></script>
 
 <!-- /views/index.hbs -->
 
 {{!-- Form to add a record to the table  --}}
-<h2>Add A New Customer!</h2>
+<h2>Adding A New Employee!</h2>
 <p>To add a new employee, please enter their information below and click 'Submit'!</p>
-<form id="add-customer-form-ajax">
+<form id="add-employee-form-ajax">
     <label for="input-firstName">First Name: </label>
     <input type="text" name="input-firstName" id="input-firstName">
     
     <label for="input-lastName">Last Name: </label>
     <input type="text" name="input-lastName" id="input-lastName">
 
-    <label for="input-address">Address: </label>
-    <input type="address" name="input-address" id="input-address">
+    <label for="input-email">Email: </label>
+    <input type="email" name="input-email" id="input-email">
 
+    <label for="input-phoneNumber">Phone Number: </label>
+    <input type="text" name="input-phoneNumber" id="input-phoneNumber">
 
     <input type="submit">
 </form>
 
 {{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
-<script src="js/add_customer.js"></script>   {{!--CHANGED FROM MONIKA'S APP--}}
+<script src="js/add_employee.js"></script>   {{!--CHANGED FROM MONIKA'S APP--}}
+

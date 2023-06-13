@@ -1,0 +1,360 @@
+/* Apply general styles */
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #FFEEAD;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #FFEEAD;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px; 
+  }
+
+a {
+  padding: 3px;
+  color: #B33030;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 10px;
+  font-weight: bold;
+  border: 1px solid;
+  border-style: inset;
+  border-color: #F2DEBA;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+ 
+a:hover {
+    color: #4E6C50;
+    text-decoration: none;
+    border: 1px solid;
+    border-style: inset;
+    border-color: #63512f;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+}
+
+  h1 {
+    color: #D21312;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 60px;
+  }
+  
+  /* Style the navigation menu */
+  nav {
+    background-color: #FFEEAD;
+    padding: 10px;
+    text-align: center;
+   
+  }
+  
+  nav a {
+    color: #B33030;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: bold;
+    border: 1px solid;
+    border-style: inset;
+    border-color: #F2DEBA;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #820000;
+    text-decoration: underline;
+    font-weight: bold;
+    border: 1px solid;
+    border-color: #F2DEBA;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style the main content section */
+  main {
+    flex: 1;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+select {
+    background-color: #D9534F;
+    color:#F5EFE6
+}
+
+  section {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    color: #820000;
+    text-align: center;
+  }
+  
+  /* Style the article */
+  article {
+    background-color: #FFEEAD;
+    padding: 10px;
+  }
+  
+  h3 {
+    color: #820000;
+    text-align: center;
+  }
+
+  h4 {
+    text-align: center;
+  }
+  
+  p {
+    color: #820000;
+    width: 55%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+  
+  /* Style the table */
+  table {
+    border-collapse: collapse;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  
+  th {
+    padding: 8px;
+    text-align: left;
+    color: #820000;
+    background-color: #F2DEBA;
+    font-weight: bold;
+  }
+
+  td {
+    padding: 8px;
+    text-align: left;
+    color: #820000;
+  }
+  
+
+  
+  /* Style the form */
+  legend {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    
+  }
+  
+
+
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #F5EFE6;
+    background-color: #F2DEBA;
+    margin-right: 5px;
+    
+  }
+
+  input[type="submit"] {
+    margin-top: 10px;
+    background-color: #B33030;
+    color: #F5EFE6;
+    border-radius: 5px;
+    
+  }
+
+  input[type="submit"]:hover {
+    margin-top: 10px; 
+    background-color: #F5EFE6;
+    color: #B33030;
+    border-radius: 5px;
+    
+  }
+
+  input[type="email"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #F5EFE6;
+    background-color: #F2DEBA;
+    margin-right: 5px;
+    
+  }
+
+  input[type="address"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #F5EFE6;
+    background-color: #F2DEBA;
+    margin-right: 5px;
+    
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #F5EFE6;
+    background-color: #F2DEBA;
+    margin-right: 5px;
+    
+  }
+
+  input[type="decimal"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #F5EFE6;
+    background-color: #F2DEBA;
+    margin-right: 5px;
+    
+  }
+
+  input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #F5EFE6;
+    background-color: #F2DEBA;
+    margin-right: 5px;
+    
+  }
+
+  button {
+    margin-top: 10px;
+    background-color: #B33030;
+    color: #F5EFE6;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    margin-top: 10px; 
+    background-color: #F5EFE6;
+    color: #B33030;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    margin-top: 10px;
+    background-color: #B33030;
+    color: #F5EFE6;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    margin-top: 10px; 
+    background-color: #F5EFE6;
+    color: #B33030;
+    border-radius: 5px;
+  }
+  
+  /* Style the footer */
+  footer {
+    background-color: #FFEEAD;
+    color: #F2DEBA;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  section {
+    background-color: #FFEEAD;
+    color: #B33030;
+    text-align: center;
+
+  }
+
+div {
+    margin-right: auto;
+    margin-left: auto;
+    width: 500px; /* Adjust the width as desired */
+    padding: 5px;
+    
+}
+
+form {
+    margin-right: auto;
+    margin-left: auto;
+}
+/* Add this CSS code */
+
+
+img {
+  display: block;
+    border-radius: 5px; /* Add rounded corners to the image */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+      
+}
+
+html{
+  margin-left: auto;
+    margin-right: auto;
+}
+
+hr{
+  border: none;
+  height: 5px;
+  border-top: 10px dotted #E8D2A6; 
+  margin: 20px 0;
+  width: 3%;
+  padding-top: 2px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.link {
+  border-style: none;
+  text-align: left;
+  color: #820000;
+}
+ .link:hover{
+  border-style: none;
+  text-align: left;
+  color: #F94A29;
+ }
+
+ .container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.add-vendor {
+  flex: 1;
+  margin-right: 40px;
+  width: 300px !important;
+  border: 2px solid rgba(139, 0, 0, 0.5); ; 
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  padding: 25px;
+}
+
+.update-vendor {
+  flex: 1;
+  margin-left: 40px;
+  width: 300px !important;
+  border: 2px solid rgba(139, 0, 0, 0.5); 
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  padding-top: 15px;
+  
+}
+.small {
+  font-size: 10px;
+}

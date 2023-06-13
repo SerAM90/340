@@ -1,0 +1,118 @@
+{{!-- Citations for the following:
+Date 6/1/2023
+Adapted:Adapted the forms to be able to download from Maria DB from MySQL for using in CS340 project- values and data are original to the data created and used by team 69
+Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main --}}
+{{!-- Create customer table --}}
+<h2>Sales Invoices Table</h2>
+<table id="salesInvoices-table">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            {{#each data.[0]}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr>
+            <td>{{this.idSalesInvoice}}</td>
+            <td>{{this.orderQuantity}}</td>
+            <td>{{this.salesDate}}</td>
+            <td>{{this.productName}}</td>
+            <td>{{this.retailPrice}}</td>
+            <td>{{this.firstName}}</td>
+            <td>{{this.lastName}}</td>
+            <td>{{this.idEmployee}}</td>
+            <td><button onclick="deleteSalesInvoice({{this.idSalesInvoice}})">Delete</button></td>
+           
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+{{!-- INSERT --}}
+
+{{!-- Form to add a record to the table  --}}
+<div>
+<h2>Adding a Sale </h2>
+<p>To add a new sales invoice, please enter the information below and click 'Submit'!</p>
+<form id="add-salesInvoice-form-ajax">
+    <form id="add-salesInvoice-form-ajax">
+
+        <select name="input-productName" id="input-productName" required>
+        <option value="test">Select Product</option>
+        {{#each data}}
+        <option value="{{this.productName}}">{{this.productName}}</option>
+        {{/each}}
+    </select>
+    <select name="input-idEmployee" id="input-idEmployee" required>
+        <option value="test">Select Employee</option>
+        {{#each data}}
+        <option value="{{this.idEmployee}}">{{this.idEmployee}}</option>
+        {{/each}}
+    </select>
+        <label for="input-orderQuantity">Order Quantity: </label>
+        <input type="number" name="input-orderQuantity" id="input-orderQuantity" placeholder="Quantity" required>
+        
+        <label for="input-salesDate">Sales Date: </label>
+        <input type="date" name="input-salesDate" id="input-salesDate">
+
+
+    
+    
+    <label for="input-firstName">Customer's First Name: </label>
+        <input type="text" name="input-firstName" id="input-firstName" placeholder="Enter customer's first name">
+
+    <label for="input-lastName">Customer's Last Name: </label>
+        <input type="text" name="input-lastName" id="input-lastName" placeholder="Enter customer's last name">
+
+
+        <input type="submit">
+    </form>
+</form>
+</div>
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="js/add_SalesInvoices.js"></script> </script> 
+<script src="js/delete_SalesInvoice.js"></script>
+
+{{!-- UPDATE --}}
+<h2>Update Order Quantity and Product Name</h2>
+<p>To update a sale, select the product and enter the new order quantity and product name</p>
+<form id="update-sale-form-ajax">
+    <label for="input-productName">Product Name</label>
+    <select name="input-productName" id="input-productName">
+        <option value="test">Select Product</option>
+        {{#each data}}
+        <option value="{{this.idProduct}}">{{this.productName}}</option>
+        {{/each}}
+    </select>
+
+    <label for="input-orderQuantity">New Order Quantity</label>
+    <input type="number" name="input-orderQuantity" id="input-orderQuantity" placeholder="Enter new order quantity" required>
+
+    <label for="input-newProductName">New Product Name</label>
+    <input type="text" name="input-newProductName" id="input-newProductName" placeholder="Enter new product name" required>
+
+    <input type="submit" value="Update">
+</form>
+
+
+{{!-- DELETE --}}
+
+
+</div>
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="./js/add_salesInvoice.js"></script> 
+<script src="./js/delete_salesInvoice.js"></script>
+<script src="./js/update_salesInvoice.js"></script>

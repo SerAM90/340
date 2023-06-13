@@ -1,9 +1,8 @@
-<a href="/">Employee Tables</a>
-<a href="/customers">Customers Table</a>
-<a href="/products">Products Table</a>
-<a href="/vendors">Vendors Table</a>
-
-
+{{!-- Citations for the following:
+Date 6/1/2023
+Adapted:
+Sourced URL from Canvas CS340 GH Repo: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main --}}
+<h2>Products Table</h2>
 {{!-- Create customer table --}}
 <table id="products-table">
 
@@ -42,17 +41,17 @@
 
 {{!-- Form to add a record to the table  --}}
 
-<h2>Adding Data with AJAX</h2>
+<h2>Adding A New Product!</h2>
 <p>To add a new product, please enter their information below and click 'Submit'!</p>
 <form id="add-product-form-ajax">
     <label for="input-productName">Product Name: </label>
     <input type="text" name="input-productName" id="input-productName">
     
     <label for="input-wholesalePrice">Wholesale Price: </label>
-    <input type="number" name="input-wholesalePrice" id="input-wholesalePrice">
+    <input type="number" step="0.01" "input-wholesalePrice" id="input-wholesalePrice">
 
     <label for="input-retailPrice">Retail Price: </label>
-    <input type="number" name="input-retailPrice" id="input-retailPrice">
+    <input type="number" step="0.01" name="input-retailPrice" id="input-retailPrice">
 
 
     <select name="input-idVendor" id="input-idVendor">
@@ -71,7 +70,7 @@
 
 {{!--SEARCH PRODUCTS table --}}
 
-<h2>Search Using an HTML Form</h2>
+<h2>Search for a Product!</h2>
 <p>Search by product name using the field below. Partial product names are OK too!</p>
 <form id="search-product-html" method='GET' action='/products'>
     <label for="input-pname">Search by Product Name: </label>
